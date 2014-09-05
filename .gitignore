@@ -1,0 +1,12 @@
+*.swp
+*.swo
+.DS_store
+*.o
+*.a
+*.so
+pkg/
+bin/
+
+.env
+aws
+
