@@ -1,18 +1,25 @@
-# integREAtor
+# Roster
 
-## Commit notifications
+## TODO
 
-Add a github webhook.
+### DB
+ * Member
+  * email/phone/name/address/??? - json?
+ * Admin
+  * email/??? (member subtype? annex table?)
 
-The target URL is `http://integreator-instance.cpdev.realestate.com.au:8080/commit_to_slack/ROOM`
+### Admin section
+ * Login (one-time code?)
+ * Secure Sessions (not in goweb, gorilla has one)
+ * Import member CSV
+ * show member list
+ * make member an admin
 
-ROOM is the slack room (including a hash encoded as %23) or username (starting with an @) to be notified.
+#### Rostering
+ * Setup rostered times & roles in advance
+  * in this case, key/support/support
+ * Send members an email with login code.
+ * Set members rostered times.
 
-For instance, `%23locations-dev` will post commits to `#locations`,
-while  `@daniel-heath` will direct-message me about commits.
-
-## Pull Request notifications
-
-Add a github webhook.
-
-The target URL is `http://integreator-instance.cpdev.realestate.com.au:8080/pull_request_to_slack/ROOM`
+### Member section
+ * Choose my rostered times
