@@ -1,7 +1,10 @@
 
 .PHONY: bin/roster bin/go-bindata src/public
 
-bin/roster: src src/public
+bin:
+	mkdir -p bin
+
+bin/roster: src src/public bin
 	go build -o bin/roster roster
 
 bin/go-bindata: src/github.com/jteeuwen/go-bindata
