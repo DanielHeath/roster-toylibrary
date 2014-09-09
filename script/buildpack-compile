@@ -1,0 +1,51 @@
+#!/bin/bash
+# usage: bin/compile <build-dir> <cache-dir> <env-dir>
+
+set -eo pipefail
+
+# Create build, cache and env vars
+mkdir -p "$1" "$2"
+build=$(cd "$1/" && pwd)
+cache=$(cd "$2/" && pwd)
+# env-dir=$(cd "$3/" && pwd)
+
+name=roster
+ver=go1.3.1
+
+if test -e $build/bin && ! test -d $build/bin
+then
+    echo >&2 " !     File bin exists and is not a directory."
+    exit 1
+fi
+
+if test -d $cache/$ver/go
+then
+    # use existing go
+    echo "-----> Using $ver"
+else
+    # install go
+    rm -rf $cache/* # be sure not to build up cruft
+    mkdir -p $cache/$ver
+    cd $cache/$ver
+    echo -n "-----> Installing $ver..."
+
+    curl -sO "https://storage.googleapis.com/golang/go1.3.1.linux-amd64.tar.gz"
+    tar zxf "go1.3.1.linux-amd64.tar.gz"
+    rm -f "go1.3.1.linux-amd64.tar.gz"
+    echo " done"
+fi
+
+mkdir -p $build/bin
+GOBIN=$build/bin export GOBIN
+GOROOT=$cache/$ver/go export GOROOT
+GOPATH=$build export GOPATH
+PATH=$GOROOT/bin:$PATH
+
+FLAGS=(-tags heroku)
+
+cd $build
+echo "-----> Running: make"
+make bin/roster
+
+mkdir -p $build/.profile.d
+echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
