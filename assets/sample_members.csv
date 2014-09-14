@@ -1,4 +1,3 @@
-memberNo, name, mobile, email
-1, John Smith, 0412131920, john@smith.ca
-1, Mary Smith, 1049853948, mary@smith.ca
-2, Joshua Footle, 004939402, josh@footle.com
+memberNo, name, mobiles, emails, hours_owed
+1, John & Mary Smith, 0412131920 1049853948, john@smith.ca mary@smith.ca, 6
+2, Joshua Footle, 004939402, josh@footle.com, 8

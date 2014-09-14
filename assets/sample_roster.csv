@@ -1,8 +1,8 @@
-date, time, location, description
-Jan 02 2015, 3:04PM, Oakleigh community hall, "Key"
-Jan 02 2015, 3:04PM, Oakleigh community hall, "Backup"
-Jan 05 2015, 3:04PM, Oakleigh community hall, "Key"
-Jan 05 2015, 3:04PM, Oakleigh community hall, "Backup"
-Jan 05 2015, 3:04PM, Oakleigh community hall, "Backup"
-Jan 09 2015, 3:04PM, Oakleigh community hall, "Key"
-Jan 09 2015, 3:04PM, Oakleigh community hall, "Backup"
+date, time, timezone, duration,   location,                role, member_id, email_reminder_sent_date, email_reminder_sent_date
+Jan 02 2015, 7:30PM, "Australia/Melbourne", 2.0, Oakleigh community hall, "Key",,,
+Jan 02 2015, 7:30PM, "Australia/Melbourne", 2.0, Oakleigh community hall, "Second",,,
+Jan 09 2015, 7:30PM, "Australia/Melbourne", 2.0, Oakleigh community hall, "Key",,,
+Jan 09 2015, 7:30PM, "Australia/Melbourne", 2.0, Oakleigh community hall, "Second",,,
+Jan 05 2015, 10:00AM, "Australia/Melbourne", 3.0, Oakleigh community hall, "Key",1,,
+Jan 05 2015, 10:00AM, "Australia/Melbourne", 3.0, Oakleigh community hall, "Second",,,
+Jan 05 2015, 10:00AM, "Australia/Melbourne", 3.0, Oakleigh community hall, "Second",,,
